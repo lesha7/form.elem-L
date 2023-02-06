@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 274
+    <textarea name="" id="elem" cols="30" rows="10">Lorem 
+        ipsum dolor sit amet consectetur adipisicing elit. 
+        Modi dolorum officia, asperiores cum ratione inventore ut at, 
+        temporibus commodi eos dolores aut sequi illum maiores? Ducimus 
+        alias a architecto atque?</textarea>
+    <p></p>
+    <script>
+        let elem = document.querySelector ('#elem');
+        let p = document.querySelector("p")
+        elem.addEventListener ("blur", function(){
+            p.textContent = elem.value;
+        } )
+    </script> -->
+
+    <!-- 275(1)
+    <input type="text" id="inp">
+    <input type="submit" id="button">
+    <script>
+        let inp = document.querySelector ('#inp');
+        let button = document.querySelector ('#button');
+        button.addEventListener ('click', function(){
+            inp.disabled = true;
+        });
+    </script> -->
+
+    <!-- 275.2
+<input type="text" id="inp">
+<input type="submit" id="button">
+<input type="submit" id="but1">
+<script>
+    let inp = document.querySelector ('#inp');
+    let button = document.querySelector ('#button');
+    button.addEventListener ('click', function(){
+        inp.disabled = true;
+    });
+    but1.addEventListener ('click', function(){
+        inp.disabled = false;
+    });
+</script> -->
+
+<!-- 275.3
+<input id="elem">
+<input type="submit" id="button">
+<script>
+    let button = document.querySelector('#button');
+    let elem = document.querySelector('#elem');
+    button.addEventListener('click', function(){
+        if(elem.disabled){
+            elem.value = elem.disabled;
+        }else{
+            elem.value = elem.disabled;
+        }
+    });
+</script> -->
+
+<!-- 276.1
+<input type="checkbox" id="checkbox">
+<input type="submit" id="button">
+<input type="submit" id="button1">
+<script>
+    let checkbox = document.querySelector('#checkbox');
+    let button = document.querySelector('#button');
+    let button1 = document.querySelector('#button1');
+    button.addEventListener('click', function(){
+        checkbox.checked = true;
+    });
+    button1.addEventListener('click', function(){
+        checkbox.checked = false;
+    });
+</script> -->
+
+
+<!-- 276.2
+<input type="checkbox" id="checkbox">
+<input type="submit" id="button">
+<p class="p"></p>
+<script>
+    let checkbox = document.querySelector('#checkbox');
+    let button = document.querySelector('#button');
+    let p = document.querySelector('.p');
+    button.addEventListener('click', function(){
+       if(checkbox.checked = true){
+        p.textContent = 'Патриот лучший';
+    }else{
+           p.textContent = 'Патриот худший';
+       }
+    });
+</script> -->
+
+
+<!-- 277.2
+<input type="checkbox" id="checkbox">
+<input type="submit" id="button">
+<script>
+    let checkbox = document.querySelector('#checkbox');
+    let button = document.querySelector('#button');
+    button.addEventListener('click', function(){
+       if(checkbox.checked){
+        checkbox.checked = false;
+    }else{
+        checkbox.checked = true;
+   }
+    });
+</script> -->
+
+
+<!-- 278
+<input type="radio" name="elem" id="radio" value="1" checked>
+<br>
+<input type="radio" name="elem" id="radio" value="2">
+<br>
+<input type="radio" name="elem" id="radio" value="3">
+<input type="submit" id="button">
+<p class="p"></p>
+<script>
+    let radio = document.querySelectorAll('#radio');
+    let button = document.querySelector('#button');
+    let p = document.querySelector('.p');
+    button.addEventListener('click', function(){
+        for(let elem of radio){
+            if (elem.checked) {
+			p.textContent = elem.value;
+        }
+    }
+});
+</script> -->
+
+
+<!-- 279.1
+<input id="elem" value="text">
+<p class="p"></p>
+<script>
+    let elem = document.querySelector('#elem');
+    let p = document.querySelector('.p');
+    elem.addEventListener('change', function() {
+        p.textContent = elem.value;
+    });
+</script> -->
+
+
+<!-- 279.2
+<input type="checkbox" id="checkbox">
+<p class="p"></p>
+<script>
+    let checkbox = document.querySelector('#checkbox');
+    let p = document.querySelector('.p');
+    checkbox.addEventListener('change',function(){
+        p.textContent = checkbox.checked;
+    })
+</script> -->
+
+<!-- 279.4
+<input type="text" id="inp">
+<script>
+    let inp = document.querySelector('#inp');
+    inp.addEventListener('change',function(){
+        if(inp.value.length < 5){
+            inp.setAttribute('class', 'colorgreen'); 
+        }else{
+            inp.setAttribute('class', 'colored');
+        }
+    })
+</script> -->
+
+
+<!-- 280.1
+<input id="elem">
+    <script>
+        let elem = document.querySelector('#elem');
+        
+        elem.addEventListener('input', function() {
+            if(elem.value.length >= 5){
+                alert('Сообщение больше 5 символов');
+            }
+        });
+</script> -->
+
+
+<!-- 280.2
+<input id="elem">
+<p class="p"></p>
+<script>
+    let elem = document.querySelector('#elem');
+    let p = document.querySelector('.p');
+    
+    elem.addEventListener('input', function() {
+        let elem2;
+        for(let i = 0; i <= elem.value.length; i++){
+            console.log(i);
+            if(elem.value.length <= 5){
+                p.textContent = 'Столько символов можно ввести ' + (5 - i);
+            }else{
+                p.textContent = 'Превышена длина текста'
+            }
+        }
+        
+    });
+</script> -->
+
+
+<!-- 281
+<input id="inp" value="">
+<input id="inp2" value="">
+<script>
+    let inp = document.querySelector('#inp');
+    let inp2 = document.querySelector('#inp2');
+    inp.addEventListener('input', function() {
+	    if(inp.value.length >= 2){
+            inp2.focus();
+        }
+    });
+    inp2.addEventListener('input', function() {
+	    if(inp2.value.length >= 2){
+            inp2.blur();
+        }
+    });
+</script> -->
+
+
+<!-- 282.1
+<select id="select">
+	<option>one</option>
+	<option selected>two</option>
+	<option>three</option>
+</select>
+<p></p>
+<input type="submit" id="button">
+<script>
+    let select = document.querySelector('#select');
+    let p = document.querySelector('p');
+    let button = document.querySelector('#button');
+    button.addEventListener('click', function(){
+        p.textContent = select.value;
+    })
+</script> -->
+
+
+<!-- 282.2
+<select id="select">
+	<option>2020</option>
+	<option>2021</option>
+	<option>2022</option>
+	<option>2023</option>
+	<option>2024</option>
+	<option>2025</option>
+	<option>2026</option>
+	<option>2027</option>
+	<option>2028</option>
+	<option>2029</option>
+	<option>2030</option>
+</select>
+<p></p>
+<input type="submit" id="button">
+<script>
+    let select = document.querySelector('#select');
+    let p = document.querySelector('p');
+    let button = document.querySelector('#button');
+    
+    button.addEventListener('click', function(){
+        if(select.value % 4 == 0){
+            p.textContent = 'Путин топ: ' + select.value;
+        }else{
+            p.textContent = 'Патриот топ ' + select.value;
+        }
+    });
+</script> -->
+
+
+<!-- 282.3
+<select id="select">
+    <option value="1">Пн</option>
+	<option value="2">Вт</option>
+	<option value="3">Ср</option>
+	<option value="4">Чт</option>
+	<option value="5">Пт</option>
+	<option value="6">Сб</option>
+	<option value="7">Вс</option>
+</select>
+<input type="submit" id="button">
+<p></p>
+<script>
+    let select = document.querySelector('#select');
+    let p = document.querySelector('p');
+    let button = document.querySelector('#button');
+    button.addEventListener('click', function(){
+        if(select.value == 1 || select.value == 2 || select.value == 3 || select.value == 4 || select.value == 5){
+            p.textContent = 'Рабочий день ' + select.value;
+        }else{
+            p.textContent = 'Выходной день ' + select.value;
+        }
+    });
+</script> -->
+
+
+<!-- 283
+<select id="select">
+    <option value="Январь">Январь</option>
+	<option value="Февраль" selected >Февраль</option>
+	<option value="Март">Март</option>
+    <option value="Апрель">Апрель</option>
+    <option value="Май">Май</option>
+    <option value="Июнь">Июнь</option>
+    <option value="Июль">Июль</option>
+    <option value="Август">Август</option>
+    <option value="Сентябрь">Сентябрь</option>
+    <option value="Октябрь">Октябрь</option>
+    <option value="Ноябрь">Ноябрь</option>
+    <option value="Декабрь">Декабрь</option>
+</select>
+<input type="submit" id="button">
+<script>
+    let select = document.querySelector('#select');
+    let button = document.querySelector('#button');
+    button.addEventListener('click', function() {
+        let date = new Date();
+    let month = date.getMonth() + 1;
+    // console.log(month);
+    if(select.value = month){
+        select.value = select.value;
+    }
+});
+</script> -->
+
+<!-- 284(1)
+<select id="select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+</select>
+<input type="number" id="inp">
+<script>
+    let select = document.querySelector('#select');
+    let inp = document.querySelector('#inp');
+    inp.addEventListener('blur', function(){
+        select.value = inp.value;
+    })
+</script> -->
+
+
+<!-- 284(2)
+<select id="select">
+    <option value="1">Пн</option>
+	<option value="2">Вт</option>
+	<option value="3">Ср</option>
+	<option value="4">Чт</option>
+	<option value="5">Пт</option>
+	<option value="6">Сб</option>
+	<option value="7">Вс</option>
+</select>
+<input type="submit" id="button">
+<script>
+    let select = document.querySelector('#select');
+    let button = document.querySelector('#button');
+    button.addEventListener('click', function() {
+	select.selectedIndex = 4 ;
+});
+</script> -->
+
+
+<!-- 285
+<select id="select">
+	<option value="one">один</option>
+	<option value="two">два</option>
+	<option value="three">три</option>
+</select>
+<p></p>
+<script>
+let select = document.querySelector('#select');
+for(let elem of select){
+    elem.textContent = elem.textContent + ' ' + elem.value
+}
+</script> -->
+
+<!-- 286(1)
+<select id="select">
+    <option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select>
+<input type="submit" id="button">
+<script>
+let select = document.querySelector('#select');
+let button = document.querySelector('#button');
+button.addEventListener('click', function(){
+select.selectedIndex = 3 ;
+})
+</script> -->
+
+
+<!-- 286(2)
+<select id="select">
+    <option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select>
+<input type="submit" id="button">
+<script>
+let select = document.querySelector('#select');
+let button = document.querySelector('#button');
+button.addEventListener('click', function(){
+ alert(select.value) ;
+})
+</script> -->
+
+
+<!-- 286.3
+<select id="select">
+    <option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select>
+<input type="submit" id="button">
+<script>
+    let select = document.querySelector('#select');
+let button = document.querySelector('#button');
+button.addEventListener('click', function(){
+    for(let elem of select)
+ elem.textContent = elem.textContent + '!';
+})
+</script> -->
+
+
+<!-- 286(4)
+<textarea>fjigh</textarea>
+<div></div>
+<script>
+    let textarea = document.querySelector('textarea');
+let div = document.querySelector('div');
+textarea.addEventListener('blur', function() {
+	div.textContent = textarea.value;
+});
+</script> -->
+
+
+<!-- 287(1)
+<input type="checkbox" id="input">
+<div></div>
+<button id="button">button</button>
+<script>
+let input = document.querySelector('#input');
+let button = document.querySelector('#button');
+let div = document.querySelector('div');
+button.addEventListener('click', function() {
+	if (input.checked = true) {
+		div.textContent = '111';
+	} else {
+		div.textContent = '222';
+	}
+});
+</script> -->
+
+
+<!-- 287(2)
+<input type="checkbox">
+<button>button</button>
+<script>
+let input = document.querySelector('input');
+let button = document.querySelector('button');
+button.addEventListener('click', function() {
+	if (input.checked = true) {
+		console.log('+++');
+	} else {
+		console.log('---');
+	}
+});
+</script> -->
+
+
+<!-- 287(3)
+<input type="checkbox">
+<button>button</button>
+<script>
+let checkbox = document.querySelector('input[type="checkbox"]');
+let button = document.querySelector('button');
+button.addEventListener('click', function() {
+if (checkbox.checked) {
+    console.log('+++');
+    } else {
+  console.log('---');
+ }
+});
+</script> -->
+
+</body>
+</html>

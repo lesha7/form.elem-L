@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+<!-- 288
+<button id="elem">text</button>
+<script>
+let elem = document.querySelector('#elem');
+elem.addEventListener('click', function(event) {
+    console.log(event);
+});
+</script> -->
+
+<!-- 289
+<div id="elem">0 : 0</div>
+<script>
+let elem = document.getElementById('elem');
+document.addEventListener('mousemove', function(event) {
+    elem.innerHTML = event.pageX + ' : ' + event.pageY;
+});
+</script> -->
+
+<!-- 290
+<button id="elem">text</button>
+<script>
+let elem = document.querySelector('#elem');
+elem.addEventListener('click', func);
+elem.addEventListener('dblclick', func);
+function func(event) {
+    if (event.type == "click") {
+elem.style.backgroundColor = "green";
+   }
+else if(event.type == "dblclick") {
+        elem.style.backgroundColor = "red";
+    }
+}
+</script> -->
+
+<!-- 291
+<ul id="elem"> 
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+</ul>
+<script>
+let elem = document.querySelector('#elem');
+elem.addEventListener('click', func);
+elem.addEventListener('dblclick', func);
+function func(event) {
+    if (event.type == "click") {
+elem.style.backgroundColor = "green";
+}
+    else if(event.type == "dblclick") {
+elem.style.backgroundColor = "red";
+    }
+}
+</script> -->
+    
+<!-- 292(1/2)
+<input>
+<script>
+let elem = document.querySelector('input');
+elem.addEventListener('keypress', function(event) {
+elem.addEventListener('keypress', function(event) {
+    console.log(event.key, event.code);
+ });
+});
+</script> -->
+
+<!-- 292(3)
+Enter 13 -->
+
+<!-- 292(4)
+Backspace 8 -->
+
+<!-- 292(5)
+<input type="text" id="elem">
+<p></p>
+<script>
+let elem = document.querySelector('#elem');
+let p = document.querySelector('p');
+elem.addEventListener('keypress', func);
+function func(event) {
+  if(event.keyCode === 13) {
+ p.innerHTML = elem.value;
+elem.value = '';
+    }
+};
+</script> -->
+
+<!-- 293(1)
+<button>Кнопка</button>
+<script>
+let button = document.querySelector('button');
+button.addEventListener('click', function(event) {
+    if (event.altKey) {
+    button.style.backgroundColor = "red";
+        }
+    }
+);
+</script> -->
+
+<!-- 293(2)
+<ul id="elem">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+ </ul>
+ <script>
+let elem = document.getElementById('elem');
+elem.addEventListener('click', function(event) { 
+    if (event.ctrlKey) {
+        event.target.textContent += '1';
+}
+    if (event.shiftKey) {
+        event.target.textContent += '2';
+ }
+})
+ </script> -->
+
+<!-- 294
+<a href="https://www.youtube.com/?hl=RU" id="elem">youtube</a><br>
+<a href="https://www.twitch.tv/?lang=ru" id="elem1">twitch</a>
+<script>
+let elem = document.querySelector('#elem');
+let elem1 = document.querySelector('#elem1');
+elem.addEventListener('click', function(event) {
+    elem.textContent = elem.textContent + ' ' + elem.href
+    event.preventDefault();
+});
+elem1.addEventListener('click', function(event) {
+    elem1.textContent = elem1.textContent + ' ' + elem1.href
+    event.preventDefault();
+});
+</script> -->
+    
+
+<!-- 294(2)
+<input type="number" id="inp">
+<input type="number" id="inp1">
+<p></p>
+<a href=" " id="url">css</a>
+<script>
+let inp = document.querySelector('#inp');
+let inp1 = document.querySelector('#inp1');
+let url = document.querySelector('#url');
+let p = document.querySelector('p');
+url.addEventListener('click', function(event){
+    event.preventDefault();
+    p.textContent = + inp.value + + inp1.value;
+})
+</script> -->
+
+<!-- 295
+<div id="elem1">
+	<div id="elem2">
+		<div id="elem3"></div>
+	</div>
+</div>
+<script>
+let elem1 = document.querySelector('#elem1');
+let elem2 = document.querySelector('#elem2');
+let elem3 = document.querySelector('#elem3');
+elem1.addEventListener('click', function() {
+	console.log('зеленый');
+});
+elem2.addEventListener('click', function() {
+	console.log('феолетовый');
+});
+elem3.addEventListener('click', function() {
+	console.log('красный');
+});
+</script> -->
+
+<!-- 296
+<div id="div1">
+	<ul id="ul1">
+		<li id="li1">1</li>
+		<li id="li1">2</li>
+		<li id="li1">3</li>
+	</ul>
+</div>
+<script>
+let div1 = document.querySelector('#div1');
+let ul1 = document.querySelector('#ul1');
+let li1 = document.querySelectorAll('#li1');
+div1.addEventListener('click', function(event){
+    if(event.target.matches('div')){
+        console.log('Клик именно по диву');
+    }
+    if(event.target.matches('ul')){
+        console.log('Клик именно по списку');
+        let li1 = document.createElement('li');
+        li1.setAttribute('id', 'li1');
+        li1.innerHTML = 'text';
+        ul1.appendChild(li1);
+    }
+    if(event.target.matches('li')){
+        event.target.textContent = event.target.textContent + '!';
+        console.log('Клик именно по элементу списка');
+    }
+});
+</script> -->
+
+
+<!-- 297
+<div id="parent">
+	<button>click me</button>
+	<div id="block">
+		text
+	</div>
+</div>
+<script>
+let parent = document.querySelector('#parent');
+let button = document.querySelector('button');
+let block  = document.querySelector('#block');
+button.addEventListener('click', function() {
+	block.classList.add('active');
+});
+parent.addEventListener('click', function() {
+	block.classList.remove('active');
+});
+</script> -->
+
+<!-- 300
+<ul>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+</ul>
+<script>
+let ul = document.querySelector('ul')
+let li = document.querySelectorAll('li')
+ul.addEventListener('click', function() {
+event.target.innerHTML = event.target.innerHTML + '!';
+    console.log(this);         
+	console.log(event.target);
+});
+</script> -->
+
+
+
+</body>
+</html>

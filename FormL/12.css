@@ -1,0 +1,17 @@
+.colored{
+    background-color: red;
+}
+
+.colorgreen{
+    background-color: green;
+}
+
+ul {
+    padding: 30px;
+    border: 1px solid red;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    border: 1px dashed black;
+} 
